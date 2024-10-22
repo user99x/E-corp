@@ -64,7 +64,7 @@
 ---
 
 ## 📝 Suivi du projet
-- **Points d'avancement tous les 15 jours par email** à Aymeric DELIENCOURT.
+- **Points d'avancement tous les 15 jours par email** à **********.
 - **Point d'étape** : première semaine de janvier.
 - **Soutenance finale** : début février.
 
