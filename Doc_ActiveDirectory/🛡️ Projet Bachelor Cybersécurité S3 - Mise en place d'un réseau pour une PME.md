@@ -11,7 +11,7 @@ L'un des produits les plus emblématiques de **Windows Server** dans les environ
 1. **Ouvrir le Gestionnaire de Serveur**  
     Cliquez sur **Gérer** puis sélectionnez **Ajouter des rôles et des fonctionnalités**.
     
-    ![[../image/Pasted image 20241024125042.png]]
+    [![[../image/Pasted image 20241024125042.png]]](https://github.com/CiscoDerm/E-Corp/blob/Doc_ActiveDirectory_Install/Doc_ActiveDirectory/image/Pasted%20image%2020241024125042.png?raw=true)
     
 2. **L'Assistant d'ajout de rôles et de fonctionnalités** s'ouvre. Cliquez sur **Suivant** pour continuer.
     
