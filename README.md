@@ -1,96 +1,89 @@
-# 🛡️ Projet Bachelor Cybersécurité S3 : Mise en place d'un réseau pour une PME
+# 🖥️ Installation de l'Active Directory sur Windows Server 2022
 
-## 📅 Année : 2024/2025
-**Responsable :** ********
-**Date de soutenance :** Début février  
+## Introduction
 
----
-
-## 🎯 Objectifs du projet
-- 🖥️ **Concevoir un réseau sécurisé pour une PME**
-- 📂 **Mettre en place un domaine Active Directory**
-- 🌐 **Configurer un accès Wi-Fi sécurisé**
-- 🛠️ **Fournir des services typiques pour une PME**
-- 🔒 **Appliquer les bonnes pratiques de cybersécurité**
+L'un des produits les plus emblématiques de **Windows Server** dans les environnements professionnels est l'**Active Directory (AD)**. Cette solution d'authentification unique (Single Sign-On) permet une gestion simple et centralisée des utilisateurs, des ordinateurs et des ressources sur le réseau. Ce guide vous accompagne à travers les étapes nécessaires pour installer les services de domaine **Active Directory (AD DS)** sur un **Windows Server 2022** fraîchement installé.
 
 ---
 
-## 💻 Matériel à disposition
-- 🌐 **Routeurs** : OpenWRT, Cisco, Stormshield
-- 🖥️ **PC/Serveurs**
-- 🔗 **Switch manageable**
-- 🖥️ **VMs pour simuler les postes utilisateurs**
+## 1️⃣ Ajouter les rôles et fonctionnalités (AD DS)
+
+1. **Ouvrir le Gestionnaire de Serveur**  
+    Cliquez sur **Gérer** puis sélectionnez **Ajouter des rôles et des fonctionnalités**.
+    
+    ![Screen1]((https://media.discordapp.net/attachments/689532967302725763/1300738568087539752/Pasted20image2020241024125042.png?ex=6721eeb1&is=67209d31&hm=db07597c9cd1ea76da0ae9aedba26671f1c0d3e5ffd4be844b719637df50ce17&=&format=webp&quality=lossless))
+    
+2. **L'Assistant d'ajout de rôles et de fonctionnalités** s'ouvre. Cliquez sur **Suivant** pour continuer.
+    
+   ![Screen2](https://media.discordapp.net/attachments/689532967302725763/1300738606058438686/Pasted20image2020241024125220.png?ex=6721eeba&is=67209d3a&hm=3e966d1b9dc76012d300abea91e72bbdf38088cdf0a7db7ef6cb32fb40d6e31f&=&format=webp&quality=lossless)
+    
+4. Dans la section **Type d'installation**, laissez **Installation basée sur un rôle ou une fonctionnalité** sélectionné et cliquez sur **Suivant**.
+    
+    ![Screen3](https://media.discordapp.net/attachments/689532967302725763/1300738643425624114/Pasted20image2020241024125242.png?ex=6721eec3&is=67209d43&hm=dfc5d28f842ab08ae172af399ac969e9d632d4c065729fe5e4adad980bb08791&=&format=webp&quality=lossless)
+    
+5. **Sélectionner le serveur de destination**  
+    Choisissez le serveur sur lequel vous voulez installer **AD DS**. Ici, nous sélectionnons le serveur local: **Windows Server 2022 Standard Evaluation**.
+    
 
 ---
 
-## 🛠️ Étapes principales
+## 2️⃣ Configurer le rôle AD DS
 
-### 1. 🚧 Concevoir un réseau sécurisé pour une PME
-- Identifier les besoins métiers.
-- Concevoir une architecture réseau avec une segmentation appropriée.
-- Choisir le matériel et fournir une justification technique.
-
-### 2. 🗂️ Mettre en place un domaine Active Directory
-- Installer et configurer un Active Directory.
-- Gérer les utilisateurs, groupes, et rôles.
-- Définir des GPO (Group Policy Objects) pour sécuriser les postes clients.
-
-### 3. 🌐 Mettre en place un accès Wi-Fi sécurisé
-- Configurer un serveur RADIUS connecté à l'annuaire.
-- Mettre en place des points d'accès Wi-Fi sécurisés.
-
-### 4. 🛠️ Fournir des services types pour une PME
-- 📠 Serveur d'impression.
-- 🗂️ Partage de fichiers.
-- 📧 Serveur de mail.
+1. **Sélectionner le rôle AD DS**  
+    Cochez l'option **Services AD DS** (Services de domaine Active Directory) et cliquez sur **Ajouter des fonctionnalités** lorsque la fenêtre apparaît.
+    
+2. **Vérification des services AD DS**  
+    Vous devriez voir que le rôle **Services AD DS** est bien sélectionné. Cliquez ensuite sur **Suivant**.
+    
+3. **Fonctionnalités supplémentaires**  
+    Sur la page **Sélectionner les fonctionnalités**, vous pouvez ajouter des options supplémentaires si nécessaire. Dans ce guide, nous choisissons une installation standard sans fonctionnalités supplémentaires. Cliquez simplement sur **Suivant**.
+    
+4. **Confirmation de l'installation**  
+    Revoyez les éléments sélectionnés. Si tout vous semble correct, cochez la case permettant de redémarrer le serveur automatiquement si nécessaire, puis cliquez sur **Installer**.
+    
+5. **Installation en cours**  
+    Une fois l'installation terminée, cliquez sur **Fermer**.
+    
 
 ---
 
-## 📄 Livrables attendus
-- 📝 **Documentation technique** (schémas détaillés du réseau, procédures de mise en œuvre).
-- ✅ **Tests et rapports de validation**.
-- 📦 **Plan de sauvegarde et de récupération des données**.
-- 🔑 **Politiques de sécurité détaillées**.
-- 🔄 **Plan de mise à jour du système**.
+## 3️⃣ Promouvoir le serveur en contrôleur de domaine
+
+1. **Accéder à la notification**  
+    Une fois AD DS installé, retournez dans le **Gestionnaire de serveur**. Une notification jaune apparaîtra à côté de l'onglet **Gérer**. Cliquez dessus et choisissez **Promouvoir ce serveur en contrôleur de domaine**.
+    
+2. **Assistant de configuration**  
+    L'**Assistant de configuration des services de domaine Active Directory** s'ouvre. Vous allez ici créer une nouvelle forêt. Saisissez le **Nom de domaine racine** de votre organisation, puis cliquez sur **Suivant**.
+    
+3. **Options du contrôleur de domaine**  
+    Laissez les paramètres par défaut et entrez votre mot de passe de récupération. Cliquez sur **Suivant**.
+    
+4. **Option DNS**  
+    Une erreur liée à la délégation DNS peut apparaître : _"Une délégation pour ce serveur DNS ne peut pas être créée car le serveur de noms de zone parente autoritaire ne peut pas être trouvé"_. Ignorez cette erreur en cliquant simplement sur **Suivant**.
+    
 
 ---
 
-## ⏳ Gestion du temps
-1. **Planification** : Divisez le projet en étapes avec des objectifs atteignables.
-2. **Priorisation** : Concentrez-vous sur les aspects critiques (Active Directory, Wi-Fi, documentation).
-3. **Collaboration** : Travaillez en équipe pour accélérer les progrès.
-4. **Documentation** : Documentez au fur et à mesure.
+## 4️⃣ Configurations supplémentaires
+
+1. **Nom de domaine NetBIOS**  
+    Laissez le nom par défaut ou modifiez-le si nécessaire (limité à 15 caractères). Cliquez sur **Suivant**.
+    
+2. **Chemins de stockage par défaut**  
+    Laissez les chemins de stockage des fichiers AD par défaut, sauf si vous avez des besoins spécifiques. Cliquez sur **Suivant**.
+    
+3. **Résumé des paramètres**  
+    Vérifiez les choix que vous avez effectués. Si tout vous convient, cliquez sur **Suivant**.
+    
+4. **Validation des prérequis**  
+    Le serveur validera les prérequis. Si des erreurs surviennent, corrigez-les avant de continuer. Sinon, cliquez sur **Installer**.
+    
+5. **Redémarrage**  
+    Une fois l'installation terminée, cliquez sur **Fermer**. Le serveur redémarrera automatiquement.
+    
 
 ---
 
-## 📝 Suivi du projet
-- **Points d'avancement tous les 15 jours par email** à **********.
-- **Point d'étape** : première semaine de janvier.
-- **Soutenance finale** : début février.
+## 🎉 Connexion au domaine
 
----
-
-## 🏆 Critères d'évaluation
-- 🎤 **Soutenance orale**.
-- 📚 **Qualité de la documentation**.
-- 🔒 **Fonctionnalités et sécurité du réseau**.
-
----
-
-## 📢 Conseils pour la soutenance
-- ✨ **Clarté** : Soyez concis et évitez les détails superflus.
-- 🖥️ **Démonstration** : Préparez des démonstrations en direct ou avec des captures d’écran.
-- ⏰ **Gestion du temps** : Respectez les 25 minutes allouées pour la présentation.
-- ❓ **Préparation** : Préparez des réponses aux questions fréquentes sur la sécurité et la scalabilité.
-
----
-
-## 🛠️ Groupes de travail
-- **Cyberdyne Systems** : Aubergine, Rthur, Token, Over.
-- **Tyrell Corporation** : Rhoknir, Yannou, Dim.
-- **E Corp** : Elhoyr, Cisco, L2, Golem.
-
----
-
-## 📩 Questions ?
-Merci et bonne chance pour vos projets ! 💪
+Après le redémarrage du serveur, vous pouvez maintenant vous connecter au domaine avec les identifiants que vous avez définis lors de la configuration. Votre **Windows Server 2022** est maintenant configuré en tant que **Contrôleur de domaine** avec **Active Directory** !
