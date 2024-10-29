@@ -11,17 +11,17 @@ L'un des produits les plus emblématiques de **Windows Server** dans les environ
 1. **Ouvrir le Gestionnaire de Serveur**  
     Cliquez sur **Gérer** puis sélectionnez **Ajouter des rôles et des fonctionnalités**.
     
-    [![[../image/Pasted image 20241024125042.png]]](https://github.com/CiscoDerm/E-Corp/blob/Doc_ActiveDirectory_Install/Doc_ActiveDirectory/image/Pasted%20image%2020241024125042.png?raw=true)
+    ![Screen1]((https://media.discordapp.net/attachments/689532967302725763/1300738568087539752/Pasted20image2020241024125042.png?ex=6721eeb1&is=67209d31&hm=db07597c9cd1ea76da0ae9aedba26671f1c0d3e5ffd4be844b719637df50ce17&=&format=webp&quality=lossless))
     
 2. **L'Assistant d'ajout de rôles et de fonctionnalités** s'ouvre. Cliquez sur **Suivant** pour continuer.
     
-    ![[Pasted image 20241024125220.png]]
+   ![Screen2](https://media.discordapp.net/attachments/689532967302725763/1300738606058438686/Pasted20image2020241024125220.png?ex=6721eeba&is=67209d3a&hm=3e966d1b9dc76012d300abea91e72bbdf38088cdf0a7db7ef6cb32fb40d6e31f&=&format=webp&quality=lossless)
     
-3. Dans la section **Type d'installation**, laissez **Installation basée sur un rôle ou une fonctionnalité** sélectionné et cliquez sur **Suivant**.
+4. Dans la section **Type d'installation**, laissez **Installation basée sur un rôle ou une fonctionnalité** sélectionné et cliquez sur **Suivant**.
     
-    ![[Pasted image 20241024125242.png]]
+    ![Screen3](https://media.discordapp.net/attachments/689532967302725763/1300738643425624114/Pasted20image2020241024125242.png?ex=6721eec3&is=67209d43&hm=dfc5d28f842ab08ae172af399ac969e9d632d4c065729fe5e4adad980bb08791&=&format=webp&quality=lossless)
     
-4. **Sélectionner le serveur de destination**  
+5. **Sélectionner le serveur de destination**  
     Choisissez le serveur sur lequel vous voulez installer **AD DS**. Ici, nous sélectionnons le serveur local: **Windows Server 2022 Standard Evaluation**.
     
 
