@@ -1,133 +1,49 @@
-# Documentation de Maintenance pour Windows Server 2019 sur VirtualBox
+# 📚 Documentation du Projet
 
-## Table des Matières
-1. [Introduction](#introduction)
-2. [Prérequis](#prérequis)
-3. [Accès à la VM](#accès-à-la-vm)
-4. [Tâches de Maintenance Hebdomadaires](#tâches-de-maintenance-hebdomadaires)
-5. [Tâches de Maintenance Mensuelles](#tâches-de-maintenance-mensuelles)
-6. [Résolution des Problèmes Communs](#résolution-des-problèmes-communs)
-7. [Sauvegarde et Restauration](#sauvegarde-et-restauration)
-8. [Mises à Jour et Patches](#mises-à-jour-et-patches)
-9. [Arrêt et Redémarrage de la VM](#arrêt-et-redémarrage-de-la-vm)
+Bienvenue dans le dépôt de documentation pour notre projet ! Ce repository contient plusieurs documents essentiels relatifs à la configuration, la gestion, et la maintenance du système.
 
----
+## 📝 Documentation Principale
 
-## Introduction
-Ce document décrit les tâches de maintenance essentielles pour garantir la performance et la sécurité d'un serveur Windows Server 2019 hébergé sur une machine virtuelle (VM) via VirtualBox.
+### 📑 **Documentation Active Directory**
+Cette documentation décrit comment configurer des comptes utilisateurs dans Active Directory, gérer les permissions et accéder aux ressources via un domaine. Elle détaille aussi les étapes pour joindre des ordinateurs au domaine et appliquer des stratégies de groupe (GPO).
 
----
+- **Création des comptes utilisateurs** 👥
+- **Groupes de sécurité** 🔒
+- **Configuration des permissions NTFS** 🛠️
+- **Stratégies de groupe (GPO)** 📊
+- **Tests et validation** ✅
 
-## Prérequis
-- VirtualBox installé avec une version compatible.
-- Accès administratif à la VM et à VirtualBox.
-- Espace disque suffisant sur le système hôte pour les sauvegardes et snapshots.
-- Connaissance de base de l'environnement Windows Server.
+### 🔧 **Documentation de Maintenance**
+Ce document couvre les bonnes pratiques et procédures pour maintenir les systèmes en bonne santé, effectuer des mises à jour régulières, résoudre des problèmes courants, et gérer les utilisateurs dans Active Directory.
+
+- **Surveillance des systèmes** 📈
+- **Mises à jour et patches** 🔄
+- **Gestion des utilisateurs et permissions** 🧑‍💼
+- **Résolution des problèmes courants** ⚠️
 
 ---
 
-## Accès à la VM
-### Depuis VirtualBox :
-1. Lancez VirtualBox.
-2. Sélectionnez la VM contenant Windows Server 2019.
-3. Cliquez sur **Démarrer** pour initialiser la VM.
-4. Connectez-vous avec un compte administrateur.
+## 🚀 Structure du Repository
 
-### Depuis le Réseau (RDP) :
-1. Assurez-vous que le RDP est activé sur le serveur.
-2. Utilisez un client RDP (ex. : `mstsc`) pour accéder au serveur.
-3. Entrez l'adresse IP de la VM et connectez-vous avec des identifiants valides.
+- 📁 **/docs**
+  - 📄 `AD_User_Configuration.md` : Documentation pour configurer les utilisateurs dans Active Directory.
+  - 📄 `AD_Maintenance_Guide.md` : Guide de maintenance pour la gestion de l'environnement Active Directory.
 
 ---
 
-## Tâches de Maintenance Hebdomadaires
-1. **Vérification des ressources système :**
-   - Ouvrez le **Gestionnaire des tâches** ou utilisez **PerfMon** pour surveiller l'utilisation CPU, RAM et disque.
-   - Identifiez les processus gourmands.
+## 📘 Comment Utiliser Cette Documentation
 
-2. **Vérification des journaux d'événements :**
-   - Ouvrez l'outil **Observateur d'événements**.
-   - Analysez les sections **Système** et **Sécurité** pour détecter des erreurs ou des avertissements.
-
-3. **Gestion des utilisateurs et droits :**
-   - Révisez les comptes d'utilisateurs et supprimez ceux inutilisés.
-   - Vérifiez les groupes d’administration.
-
-4. **Sauvegarde des données critiques :**
-   - Assurez-vous que les sauvegardes planifiées ont été effectuées correctement.
-   - Testez la récupération à partir d'une sauvegarde.
+1. **Lisez le guide de configuration** : Si vous êtes responsable de la gestion des utilisateurs, commencez par la documentation Active Directory pour apprendre à configurer et à gérer les comptes dans l'AD.
+2. **Suivez les procédures de maintenance** : Consultez la documentation de maintenance pour connaître les étapes de mise à jour et de gestion des utilisateurs.
+3. **Effectuez les tests** : Après avoir suivi les étapes, n'oubliez pas de valider les configurations avec les tests appropriés pour garantir le bon fonctionnement des accès et des permissions.
 
 ---
 
-## Tâches de Maintenance Mensuelles
-1. **Mises à jour système :**
-   - Exécutez **Windows Update** pour télécharger et installer les correctifs de sécurité.
-   - Redémarrez si nécessaire.
+## 📌 Ressources supplémentaires
 
-2. **Défragmentation et optimisation du disque :**
-   - Ouvrez **Optimiser les lecteurs** pour vérifier si la défragmentation est nécessaire.
-
-3. **Snapshot de la VM :**
-   - Dans VirtualBox, créez un snapshot avant toute modification majeure :
-     - Menu **Machine** > **Prendre un instantané**.
-
-4. **Vérification de la sécurité réseau :**
-   - Analysez les règles de pare-feu configurées via **Windows Defender Firewall**.
-   - Exécutez un scan antivirus/malware.
+- **Site officiel Microsoft sur Active Directory** : [Lien vers la documentation](https://learn.microsoft.com/fr-fr/windows-server/identity/active-directory-domain-services)
+- **Forum de support** : [Lien vers le forum](https://social.technet.microsoft.com/Forums/windowsserver/fr-FR/home)
 
 ---
 
-## Résolution des Problèmes Communs
-### La VM ne démarre pas :
-- Assurez-vous que le système hôte dispose de suffisamment de mémoire et d'espace disque.
-- Vérifiez la configuration des **paramètres système** dans VirtualBox.
-
-### Problèmes réseau :
-- Confirmez que l'adaptateur réseau de la VM est configuré correctement (NAT, Pont, etc.).
-- Redémarrez le service réseau avec :  
-  ```bash
-  net stop dhcp && net start dhcp
-  ```
-
-### Performances lentes :
-- Vérifiez si une fragmentation excessive est en cours.
-- Augmentez la RAM ou les processeurs attribués à la VM dans VirtualBox.
-
----
-
-## Sauvegarde et Restauration
-### Sauvegarde :
-1. Créez un snapshot de la VM dans VirtualBox.
-2. Exportez la VM via **Fichier > Exporter vers un fichier OVF**.
-
-### Restauration :
-1. Importez un fichier OVF via **Fichier > Importer un appareil virtuel**.
-2. Restaurez les données à partir des sauvegardes.
-
----
-
-## Mises à Jour et Patches
-- Lancez **Windows Server Update Services** (WSUS) ou Windows Update.
-- Configurez les mises à jour automatiques :
-  - Ouvrez **Stratégie de groupe** avec `gpedit.msc`.
-  - Accédez à **Configuration ordinateur > Modèles d'administration > Composants Windows > Windows Update**.
-
----
-
-## Arrêt et Redémarrage de la VM
-### Depuis VirtualBox :
-1. Cliquez sur **Machine > Fermer > Envoyer l'ordre d'arrêt**.
-2. Assurez-vous que la VM est éteinte avant d'effectuer des modifications.
-
-### Depuis Windows Server :
-1. Ouvrez une session administrateur.
-2. Exécutez la commande :  
-   ```bash
-   shutdown /s /t 0
-   ```
-
----
-
-## Notes
-- Tenez un journal des tâches de maintenance effectuées.
-- Planifiez des audits de sécurité trimestriels pour renforcer la protection.
+Merci d'avoir consulté notre documentation ! ✨ Si vous avez des questions ou des suggestions, n'hésitez pas à ouvrir une **issue** ou à soumettre une **pull request**. 😊
