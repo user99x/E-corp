@@ -1,0 +1,35 @@
+site_name: Doc E-Corp
+docs_dir: source
+nav:
+  - Home: README.md
+  - Templates: template.md
+  - Services:
+      - Gitlab: 
+          - Administration: services/gitlab/gitlab.md
+          - Config Git: services/gitlab/configgit.md
+          - Config Runner: services/gitlab/configgitlabrunner.md
+          - Config Pipeline: services/gitlab/configpipeline.md
+      - Monitoring:
+          - Grafana: services/monitoring/grafana.md
+          - Prometheus: services/monitoring/prometheus.md
+          - Node Exporter: services/monitoring/node_exporter.md
+      - Portainer: services/portainer.md
+      - Traefik: services/traefik.md
+  - Active Directory:
+      - Créer user: AD/gestionuser.md
+      - GPO: AD/gpo.md
+      - Serveur de Fichier: AD/fileserver.md
+      - DNS: AD/dns.md
+      - NPS (Radius): AD/nps.md
+  - Routeur OpenWrt:
+      - Configuration des Interfaces Réseaux: router/config_interface.md
+      - Configuration des VLAN: router/vlan.md
+      - Règles de Firewall: router/firewall.md
+      - Configuration du Wifi: router/wifi.md
+  - Switch Netgear:
+      - Configuration des Ports: switch/port.md
+      - Configuration des VLAN: switch/vlan.md
+      - Configuration des tags: switch/tag.md
+
+theme:
+  name: mkdocs
