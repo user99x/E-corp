@@ -35,6 +35,14 @@ Avant d'installer MkDocs, assurez-vous d'avoir installé **Git**, **Python** et 
      git --version
      ```
 
+
+## 3. Configurer git
+1. **Configurer son email**
+     ```sh
+     git config --global.email "email.used@for.github"
+     git config --global.user "githubuser"
+     ```
+
 ### Vérifier si Python est déjà installé
 Exécutez la commande suivante dans un terminal (Linux) ou l'invite de commande (Windows) :
 ```sh
@@ -48,9 +56,9 @@ Si Python n'est pas installé, suivez les étapes ci-dessous.
 
 ---
 
-## 3. Installation de Python et pip
+## 4. Installation de Python et pip
 
-### 3.1 Sous Linux
+### 4.1 Sous Linux
 1. **Mettre à jour le système** :
    ```sh
    sudo apt update && sudo apt upgrade -y
@@ -65,7 +73,7 @@ Si Python n'est pas installé, suivez les étapes ci-dessous.
    pip3 --version
    ```
 
-### 3.2 Sous Windows
+### 4.2 Sous Windows
 1. **Télécharger Python** :
    - Rendez-vous sur le site officiel : [https://www.python.org/downloads/](https://www.python.org/downloads/)
    - Téléchargez et installez la dernière version de Python.
@@ -84,9 +92,9 @@ Si Python n'est pas installé, suivez les étapes ci-dessous.
 
 ---
 
-## 4. Installation de MkDocs
+## 5. Installation de MkDocs
 
-### 4.1 Sous Linux
+### 5.1 Sous Linux
 1. **Installer MkDocs avec pip** :
    ```sh
    pip3 install mkdocs
@@ -96,7 +104,7 @@ Si Python n'est pas installé, suivez les étapes ci-dessous.
    mkdocs --version
    ```
 
-### 4.2 Sous Windows
+### 5.2 Sous Windows
 1. **Installer MkDocs avec pip** :
    ```sh
    pip install mkdocs
@@ -108,7 +116,7 @@ Si Python n'est pas installé, suivez les étapes ci-dessous.
 
 ---
 
-## 5. Utilisation de Git
+## 6. Utilisation de Git
 
 ### Initialiser le projet et le cloner
 1. **Ajouter le dépôt distant et le cloner** :
@@ -139,7 +147,7 @@ Si Python n'est pas installé, suivez les étapes ci-dessous.
 
 ---
 
-## 6. Test rapide de MkDocs
+## 7. Test rapide de MkDocs
 1. **Aller dans la racine du projet** :
    ```sh
    cd E-corp
@@ -153,6 +161,6 @@ Si Python n'est pas installé, suivez les étapes ci-dessous.
 
 ---
 
-## 7. Conclusion
+## 8. Conclusion
 Vous avez maintenant MkDocs installé et prêt à l'emploi sur Linux et Windows ! Vous savez également comment utiliser Git pour contribuer à un projet et gérer vos modifications efficacement. 🚀
 
