@@ -2,7 +2,7 @@
 
 ## 📅 Année : 2024/2025
 **Responsable :** ********
-**Date de soutenance :** Début février  
+**Date de soutenance :**  10 Mars 
 
 ---
 
@@ -89,8 +89,3 @@
 - **Cyberdyne Systems** : Aubergine, Rthur, Token, Over.
 - **Tyrell Corporation** : Rhoknir, Yannou, Dim.
 - **E Corp** : Elohyrr, Cisco, L2, Golem.
-
----
-
-## 📩 Questions ?
-Merci et bonne chance pour vos projets ! 💪
