@@ -84,6 +84,7 @@ Si Python n'est pas installé, suivez les étapes ci-dessous.
      python --version
      pip --version
      ```
+   -Si il affiche que Python n'est pas installé ou trouvé, effectuer une réinstallation de python en vérifiant bien      que la case "Add python to PATH" est bien coché
 3. **Mettre à jour pip**
    - Lancer l'invite de commande et tapez:
      ```sh
