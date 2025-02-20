@@ -39,8 +39,8 @@ Avant d'installer MkDocs, assurez-vous d'avoir installé **Git**, **Python** et 
 ## 3. Configurer git
 1. **Configurer son email**
      ```sh
-     git config --global.email "email.used@for.github"
-     git config --global.user "githubuser"
+     git config --global user.email "email.used@for.github
+     git config --global user.name "githubuser"
      ```
 
 ### Vérifier si Python est déjà installé
